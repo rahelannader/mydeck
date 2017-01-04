@@ -1,5 +1,6 @@
 function [maxloc,maxprob,maxmu,maxstat,layer1	,layer2	,layer3	,layer4	,layer5	,layer6	,layer7	,layer8	,layer9	,layer10	,sigma	,mu	,skew	,kurt]=ntw2(data,output,hidden)
-    for i=1:20000;
+% An Autoregressive net built for finance and protected from overfitting. Maximum Sharpe Ratio Strategy
+for i=1:20000;
         [llayer1	,llayer2	,llayer3	,llayer4	,llayer5	,llayer6	,llayer7	,llayer8	,llayer9	,llayer10	,sigma(i,:)	,mu(i,:)	,skew(i,:)	,kurt(i,:)]=netw(data,output,hidden); %#ok<AGROW>
         sharpes=mu./sigma;
          n1=(1-(1/i));
