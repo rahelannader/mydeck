@@ -1,4 +1,7 @@
 function [layer1	,layer2	,layer3	,layer4	,layer5	,layer6	,layer7	,layer8	,layer9	,layer10	,sigma	,mu	,skew	,kurt]=netw(data,output,hidden)
+%Data is the X variable(nxm)
+%Output is the Y variable(nx1)
+%Hidden is the number of hidden layers in the ARNET (an integer)
 nodes=round((sqrt((4.*sqrt(numel(data)./2)*hidden)+1)+1)/(2*hidden));
 [x,y]=size(data); %#ok<ASGLU>
 [w,l]=size(output); %#ok<ASGLU>
