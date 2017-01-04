@@ -1,4 +1,8 @@
-m=randn(12,1000);
+
+fuction [w]=CLA(m);
+% Input m is an mxn matrix, the nth asset has m outcomes
+% W is the optimal weights on this asset
+% Based on 
 mean=mean(m);
 [q,z]=size(m);
 s1=zeros(z,q+1);
