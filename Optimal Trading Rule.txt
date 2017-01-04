@@ -1,3 +1,7 @@
+% For use in matlab: Monte is the monte carlo input
+% Output is a heatmap of Sharpe Ratios
+% Y is a buy price bound and X is a sell price bound
+% more info at : https://ssrn.com/abstract=2502613
 monte=b;
 in=min(min(monte));
 out=max(max(monte));
