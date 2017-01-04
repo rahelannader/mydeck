@@ -1,0 +1,17 @@
+monte=b;
+in=min(min(monte));
+out=max(max(monte));
+ha=linspace(in,out,50);
+for i=1:length(ha);
+for j=1:length(ha);
+thresh(:,:,i)=monte>ha(:,i);
+thresh2(:,:,j)=monte<ha(:,j);
+thresh(:,:,i,j)=thresh(:,:,i).*thresh2(:,:,j);
+r=price2ret(monte);
+strat(:,:,i,j)=r.*thresh(2:length(mean(monte')),:,i,j);
+ms(i,j)=mean(sum(strat(:,:,i,j)));
+vs(i,j)=mean(var(strat(:,:,i,j)));
+s(i,j)=ms(i,j)./vs(i,j);
+end;
+end;
+HeatMap(s,'Rowlabels',ha,'Columnlabels',ha);
